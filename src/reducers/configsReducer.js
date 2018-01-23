@@ -1,0 +1,35 @@
+let initialState = {
+    isLoading: false,
+    isEmpty: false,
+    isError: false,
+    data: [],
+    message: null
+};
+
+export function configs(state = initialState, action){
+    switch(action.type){
+        case 'FETCH_CONFIGS':
+            return Object.assign({}, state, {
+                isLoading: true,
+                isEmpty: false,
+                isError: false
+            });
+        case 'RECEIVE_CONFIGS':
+            return Object.assign({}, state, {
+                isLoading: false,
+                isEmpty: false,
+                isError: false,
+                data: action.payload,
+                message: null
+            });
+        case 'UPDATE_CONFIGS':
+            return Object.assign({}, state, {
+                isLoading: false,
+                isEmpty: false,
+                isError: false,
+                message: null
+            });
+        default:
+            return state;
+    }
+}

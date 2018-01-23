@@ -1,0 +1,39 @@
+html,body{
+    height:100%;
+}
+.refund-content{
+    padding:10px 0 0 0;
+}
+.refunds-list{
+    padding:10px 0 0 0;
+}
+.float-right{
+    position:absolute;
+    right:0;
+    padding:0 20px 0 0;
+}
+
+.side-menu{
+    height:100%;
+    background:#F8F9FA;
+    border-top:1px solid #E6E6E6;
+}
+.side-menu a{
+    border-bottom:1px solid #E6E6E6;
+}
+.side-menu a:hover{
+    background:#E6E6E6;
+}
+.loadingImg{
+    width:32px;
+    height:32px;
+}
+
+.login-form{
+    width:50%;
+    background: #ebebeb;
+    margin:20px auto;
+    padding:20px;
+    box-sizing: border-box;
+    border-radius:10px;
+}
