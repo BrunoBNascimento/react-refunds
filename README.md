@@ -2,7 +2,6 @@
 
  **Geral**
  
-  - [ ] Informar o que foi gasto
   - [ ] Implementar controle de permissão
   - [ ] Implementar tela de backoffice
   - [ ] Implementar toastr de erro e payload vazio
