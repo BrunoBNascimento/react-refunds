@@ -69,7 +69,7 @@ class Configs extends Component{
                         </Col>
                     </FormRow>
                 </form>
-            );
+            )
         }
     }
 

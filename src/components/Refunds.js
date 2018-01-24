@@ -27,17 +27,18 @@ class Refunds extends Component {
         this.props.fetch_accounts();
     }
 
-    store(event){
+    store = (event) => {
         event.preventDefault();
         this.props.store(this.refund);
     }
 
-    handleChange(event){
+    handleChange = (event) => {
         this.refund[event.target.id] = event.target.value;
     }
 
     accountsToSelectData(accounts){
         let data = [];
+
         if(accounts.length > 0){
             accounts.map(account => {
                 data.push({
@@ -48,59 +49,66 @@ class Refunds extends Component {
                 return data;
             });
         }
+
         return data;
     }
 
-    createTableRows(){
-        if(this.props.refunds.isLoading){
-            return(
-                <tr>
-                    <td colSpan="4">
-                        <Loading />
-                    </td>
-                </tr>
-            );
-        }
+    renderLoading(){
+        return(
+            <tr>
+                <td colSpan="4">
+                    <Loading />
+                </td>
+            </tr>
+        );
+    }
 
-        return this.props.refunds.data.map((refund)=>{
-            return (
-                <tr key={refund.id}>
-                    <td>{refund.title}</td>
-                    <td>R${refund.value}</td>
-                    <td>1611/49146-4</td>
-                    <td>{refund.comment}</td>
-                </tr>
-            );
-        })
+    renderTableRows(refund){
+        return (
+            <tr key={refund.id}>
+                <td>{refund.title}</td>
+                <td>R${refund.value}</td>
+                <td>1611/49146-4</td>
+                <td>{refund.comment}</td>
+            </tr>
+        );
+    }
+
+    createTableRows(){
+        const {data, isLoading} = this.props.refunds;
+
+        return isLoading ? this.renderLoading() : data.map((refund)=> this.renderTableRows(refund))
     }
 
     render() {
+        const {data, isLoading} = this.props.refunds;
+
         return (
             <ContainerFluid>
                 <RefundContent>
                     <form>
                         <FormRow>
                             <Col col="md-6">
-                                <BootstrapInput id='title' type='text' change={this.handleChange.bind(this)} placeholder='Ex: Uber' label='O que foi gasto?'/>
+                                <BootstrapInput id='title' type='text' change={this.handleChange} placeholder='Ex: Uber' label='O que foi gasto?'/>
                             </Col>
                             <Col col="md-6">
-                                <BootstrapInput  id='value' type='text' change={this.handleChange.bind(this)} placeholder='Ex: 15,90' label='Qual valor?'/>
+                                <BootstrapInput  id='value' type='text' change={this.handleChange} placeholder='Ex: 15,90' label='Qual valor?'/>
                             </Col>
                         </FormRow>
                         <FormRow>
                             <Col col="md-6">
-                                <BootstrapSelect data={this.accountsToSelectData(this.props.accounts.data)} isLoading={this.props.accounts.isLoading} id='account_id' change={this.handleChange.bind(this)} label='Conta bancária' />
+                                <BootstrapSelect data={this.accountsToSelectData(data)} isLoading={isLoading} id='account_id' change={this.handleChange} label='Conta bancária' />
                             </Col>
                             <Col col="md-6">
-                                <BootstrapFile id='fiscal_note' change={this.handleChange.bind(this)} label='Nota fiscal'/>
+                                <BootstrapFile id='fiscal_note' change={this.handleChange} label='Nota fiscal'/>
                             </Col>
                         </FormRow>
                         <FormRow>
                             <Col col="md-12">
-                                <BootstrapTextarea id='comment' change={this.handleChange.bind(this)} label='Comentários'/>
+                                <BootstrapTextarea id='comment' change={this.handleChange} label='Comentários'/>
                             </Col>
                         </FormRow>
-                        <button type="submit" onClick={this.store.bind(this)} className="btn btn-primary">Salvar</button>
+                        <button type="submit" onClick={this.store} className="btn btn-primary">Salvar</button>
                     </form>
                 </RefundContent>
 
@@ -146,6 +154,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-const RefundsContainer = connect(mapStateToProps, mapDispatchToProps)(Refunds);
-
-export default RefundsContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(Refunds);
