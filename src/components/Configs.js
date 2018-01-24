@@ -6,8 +6,8 @@ import BootstrapInput from './BootstrapInput';
 import Col from './Col';
 import FormRow from './FormRow';
 import FormGroup from './FormGroup';
-import ConfigsService from '../services/ConfigsService';
 import Loading from './Loading';
+import ConfigsService from '../services/ConfigsService';
 
 class Configs extends Component{
 
@@ -61,11 +61,6 @@ class Configs extends Component{
                             <Col col='md-12'>
                                 <FormGroup>
                                     <BootstrapInput id='password' type='password' change={this.handleChange} placeholder='*************' label='Sua Senha' />
-                                </FormGroup>
-                            </Col>
-                            <Col col='md-12'>
-                                <FormGroup>
-                                    <BootstrapInput id='confirmPassword' type='password' change={this.handleChange} placeholder='*************' label='Confirme sua Senha' />
                                 </FormGroup>
                             </Col>
                             <Col col='md-12'>

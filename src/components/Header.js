@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 const Header = () => {
     return (
@@ -6,7 +7,7 @@ const Header = () => {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <a className="navbar-brand" href="/">Refunds System</a>
                 <div className="float-right">
-                    <a href="/"><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                    <Link to="/logout"><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</Link>
                 </div>
             </nav>
         </div>

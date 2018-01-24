@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 import RefundContent from './RefundContent';
 import RefundList from './RefundList';
 import BootstrapInput from './BootstrapInput';
@@ -9,10 +11,8 @@ import Col from './Col';
 import FormRow from './FormRow';
 import ContainerFluid from './ContainerFluid';
 import Loading from './Loading';
-
 import RefundService from '../services/RefundService';
 import AccountsService from '../services/AccountsService';
-import {connect} from 'react-redux';
 import '../App.css';
 
 class Refunds extends Component {

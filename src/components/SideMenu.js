@@ -7,7 +7,7 @@ class SideMenu extends Component{
         return (
             <div className="side-menu">
                 <div className="nav flex-column nav-pills">
-                    <Link to="/refunds" className="nav-link">
+                    <Link to="/" className="nav-link">
                         <i className="fa fa-exchange" aria-hidden="true"></i> Reembolsos
                     </Link>
                     <Link to="/banking" className="nav-link">
