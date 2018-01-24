@@ -13,9 +13,13 @@ export default class ConfigsService{
         }
     }
 
-    static updateConfigs(configs){
+    static updateConfigs(configs, userId){
         return dispatch => {
-
+            axios.put(`http://localhost:3001/users/${userId}`)
+                .then(configs => {
+                    dispatch(updateConfigs(configs.data));
+                })
         }
     }
+
 }

@@ -5,6 +5,7 @@
   - [ ] Implementar controle de permissão
   - [ ] Implementar tela de backoffice
   - [ ] Implementar toastr de erro e payload vazio
+  - [ ] Implementar redux-form
 
  **Reembolsos**
  

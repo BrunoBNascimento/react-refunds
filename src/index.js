@@ -8,17 +8,10 @@ import Login from './components/Login';
 import Banking from './components/Banking';
 import Configs from './components/Configs';
 import Refunds from './components/Refunds';
-import {refunds} from './reducers/refundsReducer';
-import {accounts} from './reducers/accountsReducer';
-import {configs} from './reducers/configsReducer';
 import {Provider} from 'react-redux';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import configureStore from './configureStore';
 
-const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-
-const reducers = combineReducers({refunds, accounts, configs});
-const store = createStore(reducers, reduxDevTools, applyMiddleware(thunkMiddleware));
+const store = configureStore();
 
 ReactDOM.render(
     (

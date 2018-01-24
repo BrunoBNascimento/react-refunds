@@ -2,7 +2,7 @@ let initialState = {
     isLoading: false,
     isEmpty: false,
     isError: false,
-    data: [],
+    data: {},
     message: null
 };
 
@@ -19,7 +19,7 @@ export function configs(state = initialState, action){
                 isLoading: false,
                 isEmpty: false,
                 isError: false,
-                data: action.payload,
+                data: (action.payload.length >0) ? action.payload[0] : action.payload,
                 message: null
             });
         case 'UPDATE_CONFIGS':

@@ -22,6 +22,16 @@ class Banking extends Component {
         this.props.fetch_banks();
     }
 
+    store = (event) => {
+        event.preventDefault();
+        event.target.reset();
+        this.props.store(this.account);
+    }
+
+    handleChange = (event) => {
+        this.account[event.target.id] = event.target.value;
+    }
+
     createTableRows() {
         if (this.props.accounts.isLoading)
             return (
@@ -44,16 +54,6 @@ class Banking extends Component {
         });
     }
 
-    store(event) {
-        event.preventDefault();
-        event.target.reset();
-        this.props.store(this.account);
-    }
-
-    handleChange(event) {
-        this.account[event.target.id] = event.target.value;
-    }
-
     banksToSelect(banks = []) {
         let dataToSelect = [];
 
@@ -74,7 +74,7 @@ class Banking extends Component {
 
         return (
             <ContainerFluid>
-                <form onSubmit={this.store.bind(this)}>
+                <form onSubmit={this.store}>
                     <FormRow>
                         <Col col="md-6">
                             <BootstrapSelect
@@ -82,7 +82,7 @@ class Banking extends Component {
                                 label='Banco'
                                 data={dataToSelect}
                                 isLoading={this.props.accounts.isLoading}
-                                change={this.handleChange.bind(this)}
+                                change={this.handleChange}
                             />
                         </Col>
                         <Col col="md-6">
@@ -90,7 +90,7 @@ class Banking extends Component {
                                 id='bank_agency'
                                 placeholder='Ex: 1611'
                                 label='Agencia'
-                                change={this.handleChange.bind(this)}
+                                change={this.handleChange}
                             />
                         </Col>
                     </FormRow>
@@ -100,7 +100,7 @@ class Banking extends Component {
                                 id='bank_account'
                                 placeholder='Ex: 46149-4'
                                 label='Conta'
-                                change={this.handleChange.bind(this)}
+                                change={this.handleChange}
                             />
                         </Col>
                         <Col col="md-6">
@@ -108,7 +108,7 @@ class Banking extends Component {
                                 id='comment'
                                 placeholder='Ex: Conta salário'
                                 label='Comentário'
-                                change={this.handleChange.bind(this)}
+                                change={this.handleChange}
                             />
                         </Col>
                     </FormRow>
