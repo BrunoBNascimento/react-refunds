@@ -38,7 +38,6 @@ class Refunds extends Component {
 
     accountsToSelectData(accounts){
         let data = [];
-
         if(accounts.length > 0){
             accounts.map(account => {
                 data.push({
@@ -65,7 +64,7 @@ class Refunds extends Component {
 
     renderTableRows(refund){
         return (
-            <tr key={refund.id}>
+            <tr key={`refund_${refund.id}`}>
                 <td>{refund.title}</td>
                 <td>R${refund.value}</td>
                 <td>1611/49146-4</td>
@@ -74,14 +73,10 @@ class Refunds extends Component {
         );
     }
 
-    createTableRows(){
-        const {data, isLoading} = this.props.refunds;
-
-        return isLoading ? this.renderLoading() : data.map((refund)=> this.renderTableRows(refund))
-    }
-
     render() {
         const {data, isLoading} = this.props.refunds;
+        const {handleChange, accountsToSelectData, store} = this;
+        const accounts = this.props.accounts.data;
 
         return (
             <ContainerFluid>
@@ -89,26 +84,26 @@ class Refunds extends Component {
                     <form>
                         <FormRow>
                             <Col col="md-6">
-                                <BootstrapInput id='title' type='text' change={this.handleChange} placeholder='Ex: Uber' label='O que foi gasto?'/>
+                                <BootstrapInput id='title' type='text' change={handleChange} placeholder='Ex: Uber' label='O que foi gasto?'/>
                             </Col>
                             <Col col="md-6">
-                                <BootstrapInput  id='value' type='text' change={this.handleChange} placeholder='Ex: 15,90' label='Qual valor?'/>
+                                <BootstrapInput  id='value' type='text' change={handleChange} placeholder='Ex: 15,90' label='Qual valor?'/>
                             </Col>
                         </FormRow>
                         <FormRow>
                             <Col col="md-6">
-                                <BootstrapSelect data={this.accountsToSelectData(data)} isLoading={isLoading} id='account_id' change={this.handleChange} label='Conta bancária' />
+                                <BootstrapSelect data={accountsToSelectData(accounts)} isLoading={isLoading} id='account_id' change={handleChange} label='Conta bancária' />
                             </Col>
                             <Col col="md-6">
-                                <BootstrapFile id='fiscal_note' change={this.handleChange} label='Nota fiscal'/>
+                                <BootstrapFile id='fiscal_note' change={handleChange} label='Nota fiscal'/>
                             </Col>
                         </FormRow>
                         <FormRow>
                             <Col col="md-12">
-                                <BootstrapTextarea id='comment' change={this.handleChange} label='Comentários'/>
+                                <BootstrapTextarea id='comment' change={handleChange} label='Comentários'/>
                             </Col>
                         </FormRow>
-                        <button type="submit" onClick={this.store} className="btn btn-primary">Salvar</button>
+                        <button type="submit" onClick={store} className="btn btn-primary">Salvar</button>
                     </form>
                 </RefundContent>
 
@@ -124,7 +119,7 @@ class Refunds extends Component {
                         </tr>
                         </thead>
                         <tbody>
-                            {this.createTableRows()}
+                            {isLoading ? this.renderLoading() : data.map((refund)=> this.renderTableRows(refund))}
                         </tbody>
                     </table>
                 </RefundList>

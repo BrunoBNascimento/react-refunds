@@ -32,26 +32,25 @@ class Banking extends Component {
         this.account[event.target.id] = event.target.value;
     }
 
-    createTableRows() {
-        if (this.props.accounts.isLoading)
-            return (
-                <tr>
-                    <td colSpan="4">
-                        <Loading/>
-                    </td>
-                </tr>
-            );
+    renderLoading(){
+        return (
+            <tr>
+                <td colSpan="4">
+                    <Loading/>
+                </td>
+            </tr>
+        )
+    }
 
-        return this.props.accounts.data.map(account => {
-            return (
-                <tr key={account.id}>
-                    <td>{account.bank_code}</td>
-                    <td>{account.bank_agency}</td>
-                    <td>{account.bank_account}</td>
-                    <td>{account.comment}</td>
-                </tr>
-            );
-        });
+    renderTableRows(account){
+        return (
+            <tr key={account.id}>
+                <td>{account.bank_code}</td>
+                <td>{account.bank_agency}</td>
+                <td>{account.bank_account}</td>
+                <td>{account.comment}</td>
+            </tr>
+        )
     }
 
     banksToSelect(banks = []) {
@@ -71,6 +70,9 @@ class Banking extends Component {
     render() {
 
         let dataToSelect = this.banksToSelect(this.props.banks);
+
+        const {data, isLoading} = this.props.accounts;
+        console.log(data, isLoading);
 
         return (
             <ContainerFluid>
@@ -125,7 +127,7 @@ class Banking extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                        {this.createTableRows()}
+                        {isLoading ? this.renderLoading() : data.map(account => this.renderTableRows(account))}
                     </tbody>
                 </table>
             </ContainerFluid>
