@@ -3,8 +3,8 @@ import imgLoading from '../img/loading.gif';
 
 const Loading = () => {
     return(
-        <div className="text-center">
-            <img src={imgLoading} className="loadingImg" alt="" />
+        <div className="loading">
+            <img src={imgLoading} className="loading__image" alt="" />
         </div>
     );
 };

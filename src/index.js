@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import {Provider} from 'react-redux';
 import Login from './components/Login';
 import Logout from './components/Logout';
-import Banking from './components/Banking';
-import Configs from './components/Configs';
-import Refunds from './components/Refunds';
+import Banking from './components/containers/Banking';
+import Configs from './components/containers/Configs';
+import Refunds from './components/containers/Refunds';
 import configureStore from './configureStore';
-import {verifyAuth} from './auth';
+import {isAuthenticated} from './auth';
+
+function verifyAuth(nextState, replace){
+    if(!isAuthenticated()) replace('/login');
+}
 
 const store = configureStore();
 

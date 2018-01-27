@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+html,body{
+    height:100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+.header{
+    background:#292D32;
+    color: #f1f1f1;
+    height:50px;
+    width:100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.header__title{
+    color: #f1f1f1;
+    font-size:20px;
+    text-decoration:none;
+    display:inline-block;
+    margin:11px 0 0 0;
+}
+.header__item{
+    color: #f1f1f1;
+    text-decoration:none;
+}
+.header__item--right{
+    float:right;
+    height:10px;
+    margin:14px 0 0 0;
+}
+.container{
+    width:80%;
+    margin:auto;
+    display:flex;
+    flex-direction: row;
+    padding:10px 0;
+}
+.content-title {
+
+}
+.content-title__headline{
+
+}
+.content{
+    box-sizing: border-box;
+    padding:10px;
+    width:calc(100% - 200px);
+}
+.side-menu{
+    border-radius:5px;
+    height:300px;
+    overflow: hidden;
+    width:200px;
+    border: 1px solid #D0D4D9;
+}
+.side-menu__item{
+    border-bottom:1px solid #D0D4D9;
+    list-style: none;
+    padding:10px 0 10px 20px;
+    width:100%;
+}
+.side-menu__item:not(.side-menu__link--active):hover{
+    background: #F3F5F8;
+}
+.side-menu__link{
+    text-decoration:none;
+    color:#1A68D7;
+}
+.side-menu__link--active{
+    color:#292D32;
+    font-weight: 600;
+}
+.button{
+    color: #24292e;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid rgba(27,31,35,0.2);
+    border-radius: 0.25em;
+}
+.button--green{
+
+}
+.button--red{
+
+}
+.button--blue{
+
+}
+.form{
+
+}
+.form__group{
+    clear:both;
+}
+.form__group label{
+    width:100%;
+    display:block;
+}
+.form__input{
+    width:100%;
+    border-radius:5px;
+    min-height:30px;
+    background:white;
+    border:1px solid #D0D4D9;
+    min-width: 10%;
+    outline: none;
+    padding:5px;
+}
+.form__input:focus{
+
+}
+.form__input--invalid{
+
+}
+.form__label{
+
+}
+.loading{
+    text-align: center;
+}
+.loading__image{
+    width:32px;
+    height:32px;
+    margin:auto;
+}
+.table{
+
+}
+.table__row{
+
+}
+.table__td{
+
+}
+.login{
+    width:300px;
+    height:300px;
+    background:grey;
+    margin:auto;
+    border-radius: 10px;
+    padding:15px;
+    box-sizing: border-box;
+}

@@ -1,5 +1,3 @@
-export function verifyAuth(nextState, replace) {
-    if(localStorage.getItem('auth-token') === null){
-        replace('/login');
-    }
+export function isAuthenticated() {
+    return !!localStorage.getItem('auth-token');
 }

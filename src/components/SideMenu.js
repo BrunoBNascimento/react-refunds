@@ -3,21 +3,27 @@ import {Link} from 'react-router';
 
 class SideMenu extends Component{
 
+
+
     render(){
         return (
-            <div className="side-menu">
-                <div className="nav flex-column nav-pills">
-                    <Link to="/" className="nav-link">
-                        <i className="fa fa-exchange" aria-hidden="true"></i> Reembolsos
+            <ul className="side-menu">
+                <li className={`side-menu__item ${this.props.path === '/' ? 'side-menu__link--active' : ''}`}>
+                    <Link to="/" className={`side-menu__link ${this.props.path === '/' ? 'side-menu__link--active' : ''}`}>
+                        Reembolsos
                     </Link>
-                    <Link to="/banking" className="nav-link">
-                        <i className="fa fa-money" aria-hidden="true"></i> Conta Bancária
+                </li>
+                <li className={`side-menu__item ${this.props.path === '/banking' ? 'side-menu__link--active' : ''}`}>
+                    <Link to="/banking" className={`side-menu__link ${this.props.path === '/banking' ? 'side-menu__link--active' : ''}`}>
+                        Conta Bancária
                     </Link>
-                    <Link to="/configs" className="nav-link">
-                        <i className="fa fa-cog" aria-hidden="true"></i> Configurações
+                </li>
+                <li className={`side-menu__item ${this.props.path === '/configs' ? 'side-menu__link--active' : ''}`}>
+                    <Link to="/configs" className={`side-menu__link ${this.props.path === '/configs' ? 'side-menu__link--active' : ''}`}>
+                        Configurações
                     </Link>
-                </div>
-            </div>
+                </li>
+            </ul>
         );
     }
 };

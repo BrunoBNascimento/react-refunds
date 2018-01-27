@@ -1,0 +1,7 @@
+- request:
+    url: /test
+  response:
+    status: 203
+    file: get/test.json
+    headers:
+      content-type: application/json
