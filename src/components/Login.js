@@ -7,7 +7,7 @@ export default class Login extends Component {
 
     //MOCKED GET LOGIN, JUST TO TEST. TODO: Mock a post login
     doLogin(values) {
-        axios.get('http://localhost:3001/login')
+        axios.post('http://0.0.0.0:3001/login', values)
             .then(response => {
                 if (response.status === 200) {
                     localStorage.setItem('auth-token', response.data.token);

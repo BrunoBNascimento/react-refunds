@@ -32,11 +32,18 @@ html,body{
     margin:14px 0 0 0;
 }
 .container{
-    width:80%;
-    margin:auto;
     display:flex;
     flex-direction: row;
+    justify-content: center;
     padding:10px 0;
+}
+.refunds-container, .loading-container{
+    width:100%;
+    flex-wrap: wrap;
+}
+.principal-container{
+    width:80%;
+    margin:auto;
 }
 .content-title {
 
@@ -97,7 +104,7 @@ html,body{
 
 }
 .form{
-
+    width:100%;
 }
 .form__group{
     clear:both;
@@ -150,4 +157,35 @@ html,body{
     border-radius: 10px;
     padding:15px;
     box-sizing: border-box;
+}
+
+.card{
+    max-width:calc(20% - 10px);
+    background: #fbfbfb;
+    border-radius:5px;
+    border:1px solid #e3e8ed;
+    margin:5px 10px 5px 0;
+    padding:10px;
+    box-sizing: border-box;
+    box-shadow:2px 2px 2px #c9c9c9;
+    min-height:170px;
+}
+
+.card__title{
+    font-size:20px;
+    text-align: center;
+}
+.card__unordered-list{
+    margin:10px 0;
+}
+.card__list-item{
+    list-style: none;
+    line-height: 20px;
+}
+.card__data{
+
+}
+.card__svg{
+    width:150%; /* WHY ? */
+    margin:auto;
 }

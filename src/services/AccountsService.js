@@ -1,11 +1,18 @@
-import {fetchAccounts, receiveAccounts, receiveBanks, storeAccounts} from '../actions/accountsActions';
 import axios from 'axios';
+import {ACCOUNTS, BANKS} from '../constants/APIConstants'
+import {
+    fetchAccounts,
+    receiveAccounts,
+    receiveBanks,
+    storeAccounts
+} from '../actions/accountsActions';
+
 export default class AccountsService{
 
     static fetchAccounts(){
         return dispatch => {
             dispatch(fetchAccounts());
-            axios.get('http://localhost:3001/accounts')
+            axios.get(ACCOUNTS)
                 .then(response => {
                     dispatch(receiveAccounts(response.data));
                 })
@@ -14,7 +21,7 @@ export default class AccountsService{
 
     static storeAccounts(account){
         return dispatch => {
-            axios.post('http://localhost:3001/accounts', account)
+            axios.post(ACCOUNTS, account)
                 .then(response => {
                     dispatch(storeAccounts(response.data));
                 })
@@ -26,7 +33,7 @@ export default class AccountsService{
 
     static fetchBanks(){
         return dispatch => {
-            axios.get('http://localhost:3001/banks')
+            axios.get(BANKS)
                 .then(response => {
                     dispatch(receiveBanks(response.data));
                 })

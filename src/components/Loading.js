@@ -1,10 +1,26 @@
 import React from 'react';
 import imgLoading from '../img/loading.gif';
+import { List } from 'react-content-loader'
 
+//TODO: DONT REPEAT SO MUCH CODE
 const Loading = () => {
     return(
-        <div className="loading">
-            <img src={imgLoading} className="loading__image" alt="" />
+        <div className="container loading-container">
+            <div className="card">
+                <List className='card__svg'/>
+            </div>
+            <div className="card">
+                <List className='card__svg'/>
+            </div>
+            <div className="card">
+                <List className='card__svg'/>
+            </div>
+            <div className="card">
+                <List className='card__svg'/>
+            </div>
+            <div className="card">
+                <List className='card__svg'/>
+            </div>
         </div>
     );
 };

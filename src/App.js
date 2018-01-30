@@ -5,13 +5,14 @@ import './css/App.css';
 
 class App extends Component {
     render() {
+        const {props} = this;
         return (
             <div>
                 <Header/>
-                <div className="container">
-                    <SideMenu path={this.props.location.pathname}/>
+                <div className="container principal-container">
+                    <SideMenu path={props.location.pathname}/>
                     <div className="content">
-                        {this.props.children}
+                        {props.children}
                     </div>
                 </div>
             </div>

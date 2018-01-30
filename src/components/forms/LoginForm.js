@@ -9,7 +9,7 @@ const LoginForm = props => {
                 <label htmlFor='email'>
                     Email
                 </label>
-                <Field name='email' id='email' type='text' component='input' className='form__input'/>
+                <Field name='username' id='username' type='text' component='input' className='form__input'/>
             </div>
             <div className='form__group'>
                 <label htmlFor='password'>

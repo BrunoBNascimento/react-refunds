@@ -5,19 +5,19 @@
   - [ ] Implementar controle de permissão
   - [ ] Implementar tela de backoffice
   - [ ] Implementar toastr de erro e payload vazio
-  - [ ] Implementar redux-form
+  - [x] Implementar redux-form
 
  **Reembolsos**
  
   - [ ] Validar campos
-  - [ ] Habilitar loader no cadastro de reembolsos
+  - [x] Habilitar loader no cadastro de reembolsos
   - [ ] Criar mecanismo de listagem de status
-  - [ ] Realizar o envio de arquivo na requisição do axios
+  - [ ] Realizar o envio de arquivo utilizando api do firebase storage
  
  **Contas bancárias**
  
   - [ ] Validar campos
-  - [ ] Habilitar loader no cadastro de contas bancárias
+  - [x] Habilitar loader no cadastro de contas bancárias
   - [ ] Criar mecanismo de nome do banco pelo codigo
  
   **Configurações**
