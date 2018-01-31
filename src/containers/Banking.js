@@ -1,7 +1,9 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
-
 import Loading from '../components/Loading'
+import Card from '../components/Card/Card'
+import CardTitle from '../components/Card/CardTitle'
+import CardData from '../components/Card/CardData'
 import AccountsService from '../services/AccountsService'
 import BankingForm from '../components/forms/BankingForm'
 
@@ -12,42 +14,45 @@ class Banking extends Component {
         this.props.fetch_banks()
     }
 
-    store = values => {
-        this.props.store(values);
+    storeAccounts = values => {
+        return this.props.storeAccounts(values)
     }
 
-    //TODO: Create a high order component to improve this component
+    //TODO: Create a high order component to improve this repeated code
     renderCards(account) {
         return (
-            <div className='card' key={`account_${account.id}`}>
-                <div className="card__title">
+            <Card key={`banking_${account.id}`}>
+                <CardTitle>
                     {account.bank_code}
-                </div>
-                <div className="card__data">
+                </CardTitle>
+                <CardData>
                     <ul className="card__unordered-list">
                         <li className="card__list-item"><b>Agencia:</b> {account.bank_agency}</li>
                         <li className="card__list-item"><b>Conta:</b> {account.bank_account}</li>
                         <li className="card__list-item"><b>Comentários:</b> {account.comment}</li>
                     </ul>
-                </div>
-            </div>
+                </CardData>
+            </Card>
         )
     }
 
-    banksToSelect(banks = []) {
-        return banks.map((bank) => ({value: bank.code, label: bank.name}));
+    banksToSelectData(banks = []) {
+        return banks.map((bank) => ({value: bank.code, label: bank.name}))
     }
 
     render() {
 
-        const dataToSelect = this.banksToSelect(this.props.banks)
+        const banks = this.banksToSelectData(this.props.banks)
         const {data, isLoading} = this.props.accounts
 
         return (
-            <div>
-                <BankingForm onSubmit={this.store}/>
-                {isLoading ? <Loading/> : data.map(account => this.renderCards(account))}
-            </div>
+            <Fragment>
+                <BankingForm banks={banks} onSubmit={this.storeAccounts}/>
+                <h1 className='title'>Suas contas</h1>
+                <div className='container banks-container'>
+                    {isLoading ? <Loading/> : data.map(account => this.renderCards(account))}
+                </div>
+            </Fragment>
         );
     }
 }
@@ -64,7 +69,7 @@ const mapDispatchToProps = dispatch => {
         fetch: () => {
             dispatch(AccountsService.fetchAccounts())
         },
-        store: account => {
+        storeAccounts: account => {
             dispatch(AccountsService.storeAccounts(account))
         },
         fetch_banks: () => {
@@ -73,4 +78,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Banking);
+export default connect(mapStateToProps, mapDispatchToProps)(Banking)

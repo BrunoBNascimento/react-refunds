@@ -21,6 +21,7 @@ export default class AccountsService{
 
     static storeAccounts(account){
         return dispatch => {
+            dispatch(fetchAccounts());
             axios.post(ACCOUNTS, account)
                 .then(response => {
                     dispatch(storeAccounts(response.data));

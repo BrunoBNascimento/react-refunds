@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router';
-import {ROOT_PATH, BANKING_PATH, CONFIGS_PATH} from '../constants/RouterConstants';
+import React, {Component} from 'react'
+import {Link} from 'react-router'
+import {ROOT_PATH, BANKING_PATH, CONFIGS_PATH} from '../constants/RouterConstants'
 
 class SideMenu extends Component{
 
@@ -32,4 +32,4 @@ class SideMenu extends Component{
         );
     }
 };
-export default SideMenu;
+export default SideMenu

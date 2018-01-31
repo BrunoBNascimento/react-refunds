@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-import Header from './components/Header';
-import SideMenu from './components/SideMenu';
-import './css/App.css';
+import React, {Component, Fragment} from 'react'
+import Header from './components/Header'
+import SideMenu from './components/SideMenu'
+import './css/App.css'
 
 class App extends Component {
     render() {
-        const {props} = this;
+        const {props} = this
         return (
-            <div>
+            <Fragment>
                 <Header/>
                 <div className="container principal-container">
                     <SideMenu path={props.location.pathname}/>
@@ -15,9 +15,9 @@ class App extends Component {
                         {props.children}
                     </div>
                 </div>
-            </div>
+            </Fragment>
         );
     }
 }
 
-export default App;
+export default App

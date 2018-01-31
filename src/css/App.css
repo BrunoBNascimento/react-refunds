@@ -3,23 +3,23 @@ html,body{
     height:100%;
 }
 * {
+    font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu', sans-serif;
 }
 .header{
     background:#292D32;
+    box-sizing: border-box;
     color: #f1f1f1;
     height:50px;
-    width:100%;
     padding: 0 15px;
-    box-sizing: border-box;
+    width:100%;
 }
 .header__title{
     color: #f1f1f1;
+    display:inline-block;
     font-size:20px;
     text-decoration:none;
-    display:inline-block;
     margin:11px 0 0 0;
 }
 .header__item{
@@ -57,11 +57,11 @@ html,body{
     width:calc(100% - 200px);
 }
 .side-menu{
+    border: 1px solid #D0D4D9;
     border-radius:5px;
     height:300px;
     overflow: hidden;
     width:200px;
-    border: 1px solid #D0D4D9;
 }
 .side-menu__item{
     border-bottom:1px solid #D0D4D9;
@@ -81,18 +81,19 @@ html,body{
     font-weight: 600;
 }
 .button{
-    color: #24292e;
     background-color: #eff3f6;
     background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
-    padding: 6px 12px;
+    border: 1px solid rgba(27,31,35,0.2);
+    border-radius: 0.25em;
+    cursor: pointer;
+    color: #24292e;
     font-size: 14px;
     font-weight: 600;
+    padding: 6px 12px;
     line-height: 20px;
     white-space: nowrap;
     vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid rgba(27,31,35,0.2);
-    border-radius: 0.25em;
+
 }
 .button--green{
 
@@ -108,20 +109,24 @@ html,body{
 }
 .form__group{
     clear:both;
+    padding:5px 0;
 }
 .form__group label{
-    width:100%;
     display:block;
+    width:100%;
 }
-.form__input{
+.form__input, .form__textarea{
     width:100%;
     border-radius:5px;
-    min-height:30px;
     background:white;
     border:1px solid #D0D4D9;
+    min-height:30px;
     min-width: 10%;
     outline: none;
     padding:5px;
+}
+.form__textarea{
+    min-height:130px;
 }
 .form__input:focus{
 
@@ -150,27 +155,32 @@ html,body{
 
 }
 .login{
-    width:300px;
-    height:300px;
     background:grey;
-    margin:auto;
-    border-radius: 10px;
-    padding:15px;
     box-sizing: border-box;
+    border-radius: 10px;
+    height:300px;
+    margin:auto;
+    padding:15px;
+    width:300px;
 }
 
 .card{
-    max-width:calc(20% - 10px);
     background: #fbfbfb;
     border-radius:5px;
     border:1px solid #e3e8ed;
-    margin:5px 10px 5px 0;
-    padding:10px;
     box-sizing: border-box;
     box-shadow:2px 2px 2px #c9c9c9;
+    margin:5px 5px 5px 5px;
+    padding:10px;
     min-height:170px;
+    max-width:calc(20% - 10px);
 }
-
+.card:first-child{
+    margin:5px 5px 5px 0;
+}
+.card:last-child{
+    margin:5px 0 5px 5px;
+}
 .card__title{
     font-size:20px;
     text-align: center;
@@ -188,4 +198,32 @@ html,body{
 .card__svg{
     width:150%; /* WHY ? */
     margin:auto;
+}
+.title{
+    border-bottom: 1px solid #e3e8ed;
+    line-height:60px;
+    color:#292D32;
+}
+.badge{
+    padding:2px 5px;
+    color:white;
+    max-width:50%;
+    text-align: center;
+    border-radius:5px;
+    float:right;
+}
+.badge--pending{
+    background:orange;
+}
+.badge--success{
+    background:#48A446;
+}
+.badge--neutral{
+    background:#292D32;
+}
+.badge--danger{
+    background:#D13E41;
+}
+.badge__text{
+    color:white;
 }

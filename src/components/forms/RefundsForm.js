@@ -1,35 +1,31 @@
 import React from 'react'
 import {reduxForm, Field} from 'redux-form'
-import {floatToReal} from '../../utils/FormatterUtils'
+import {createSelectOptions} from '../../utils/FormUtils'
+import {floatToRealTwo} from '../../utils/FormatterUtils'
 
-const createSelectOptions = accounts => {
-    return accounts.map(
-        account => <option value={account.value} key={`account_${account.value}`}>{account.label}</option>
-    )
-}
 
-const Form = props => {
-    const {handleSubmit, accounts} = props;
+const RefundsForm = props => {
+    const {handleSubmit, accounts} = props
     return (
         <form onSubmit={handleSubmit} className='form'>
             <div className="form__group">
                 <label htmlFor='title' className='form__label'>
                     O que foi gasto?
                 </label>
-                <Field component='input' name='title' id='title' type='text' className='form__input'/>
+                <Field component='input' name='title' id='title' type='text' className='form__input' required/>
             </div>
             <div className="form__group">
                 <label htmlFor='value' className='form__label'>
                     Valor
                 </label>
-                <Field component='input' name='value' id='value' type='text' className='form__input' normalize={floatToReal}/>
+                <Field component='input' name='value' id='value' type='text' className='form__input' required normalize={floatToRealTwo}/>
             </div>
             <div className="form__group">
                 <label htmlFor='account_id' className='form__label'>
                     Conta
                 </label>
-                <Field component='select' name='account_id' id='account_id' className='form__input'>
-                    <option>Escolha...</option>
+                <Field component='select' name='account_id' id='account_id' className='form__input' required>
+                    <option>Escolha a conta para depósito...</option>
                     {createSelectOptions(accounts)}
                 </Field>
             </div>
@@ -43,15 +39,13 @@ const Form = props => {
                 <label htmlFor='comment' className='form__label'>
                     Comentários
                 </label>
-                <Field component='input' name='comment' id='comment' type='text' className='form__input'/>
+                <Field component='textarea' name='comment' id='comment' type='text' className='form__textarea' required/>
             </div>
             <button type='submit' className='button'>Salvar</button>
         </form>
     );
 }
 
-const RefundsForm = reduxForm({
+export default reduxForm({
     form: 'refunds'
-})(Form);
-
-export default RefundsForm;
+})(RefundsForm)

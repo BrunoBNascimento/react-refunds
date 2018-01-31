@@ -5,6 +5,8 @@
   - [ ] Implementar controle de permissão
   - [ ] Implementar tela de backoffice
   - [ ] Implementar toastr de erro e payload vazio
+  - [ ] Usar interceptor para enviar Bearer
+  - [ ] Separar arquivos css
   - [x] Implementar redux-form
 
  **Reembolsos**

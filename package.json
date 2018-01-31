@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "mocks": "json-server --watch ./mocks/db.json --port 3001 --delay 4000 --middlewares ./mocks/middlewares/login-middleware.js"
+    "mocks": "node ./node_modules/json-server/bin/index.js --watch ./mocks/db.json --port 3001 --delay 4000 --middlewares ./mocks/middlewares/login-middleware.js"
   },
   "devDependencies": {
     "json-server": "^0.12.1",

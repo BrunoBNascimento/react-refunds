@@ -1,5 +1,5 @@
-import React from 'react';
-import {Link} from 'react-router';
+import React from 'react'
+import {Link} from 'react-router'
 
 const Header = () => {
     return (
@@ -11,6 +11,6 @@ const Header = () => {
                 <i className="fa fa-sign-out" aria-hidden="true"></i> Logout
             </Link>
         </header>
-    );
-};
-export default Header;
+    )
+}
+export default Header

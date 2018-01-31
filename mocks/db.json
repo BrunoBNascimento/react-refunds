@@ -13,7 +13,7 @@
       "value": "19.90",
       "account_id": "1",
       "comment": "Uber do tamboré até alphaville",
-      "status": "ABERTO",
+      "status": "APROVADO",
       "id": 2
     },
     {
@@ -21,7 +21,7 @@
       "value": "19.90",
       "account_id": "1",
       "comment": "Uber do tamboré até alphaville",
-      "status": "ABERTO",
+      "status": "REEMBOLSADO",
       "id": 3
     },
     {
@@ -29,7 +29,7 @@
       "value": "19.90",
       "account_id": "1",
       "comment": "Uber do tamboré até alphaville",
-      "status": "ABERTO",
+      "status": "NEGADO",
       "id": 4
     },
     {
@@ -39,13 +39,6 @@
       "comment": "Uber do tamboré até alphaville",
       "status": "ABERTO",
       "id": 5
-    },
-    {
-      "title": "Hotel Ibis",
-      "value": "459.91",
-      "account_id": "1",
-      "comment": "hotel ibis 3 dias",
-      "id": 6
     }
   ],
   "accounts": [
@@ -55,10 +48,26 @@
       "bank_account": "46149-4",
       "comment": "conta salario",
       "id": 1
+    },
+    {
+      "bank_code": "077",
+      "bank_agency": "0001",
+      "bank_account": "19823-2",
+      "comment": "Banco intermedium, favor só realizar TED",
+      "id": 2
     }
   ],
   "login": [],
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "Bruno Benicio Do Nascimento",
+      "cpf": "01886706611",
+      "rg": "19511685",
+      "email": "bruno.nascimento@zup.com.br",
+      "password": "123123123"
+    }
+  ],
   "banks": [
     {
       "code": "001",
