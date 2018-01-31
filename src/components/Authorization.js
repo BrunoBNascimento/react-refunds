@@ -12,11 +12,7 @@ const Authorization = allowedRoles => WrappedComponent => {
 
         render() {
             const {role} = this
-            if (allowedRoles.includes(role)) {
-                return <WrappedComponent {...this.props} />
-            } else {
-                return <Login/>
-            }
+            return allowedRoles.includes(role) ? <WrappedComponent {...this.props} /> : <Login/>
         }
     }
 }

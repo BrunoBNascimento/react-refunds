@@ -50,6 +50,14 @@ export function refunds(state = initialState, action){
                 data: null,
                 message: action.message
             }
+        case 'UPDATED_STATUS':
+            return {
+                ...state,
+                isLoading: false,
+                isEmpty: false,
+                isError: false,
+                data: [...state.data]
+            }
         default:
             return {...state};
     }

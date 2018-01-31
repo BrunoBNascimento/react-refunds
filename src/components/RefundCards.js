@@ -4,13 +4,26 @@ import CardTitle from '../components/Card/CardTitle'
 import CardData from '../components/Card/CardData'
 import StatusBadge from '../components/StatusBadge'
 import {floatToReal} from '../utils/FormatterUtils'
+import {ABERTO, APROVADO, REEMBOLSADO, NEGADO} from '../constants/StatusConstants'
+import AdminOptions from "./AdminOptions"
 
 export default class RefundCards extends Component{
 
-    //TODO: Create a high order component to improve this
+    updateStatus = (status, id) => {
+        const {props} = this
+        props.updateStatus(status, id);
+    }
+
     createCards(refund) {
+        const {props} = this;
+        const statusArray = [
+            ABERTO,
+            APROVADO,
+            REEMBOLSADO,
+            NEGADO
+        ]
         return (
-            <Card key={`account_${refund.id}`}>
+            <Card key={`card_${refund.id}`}>
                 <CardTitle>
                     {refund.title}
                 </CardTitle>
@@ -29,6 +42,9 @@ export default class RefundCards extends Component{
                             <StatusBadge status={refund.status} />
                         </li>
                     </ul>
+                    {
+                        props.isAdmin === true ? <AdminOptions options={statusArray} updateStatus={props.updateStatus} refundId={refund.id}/> : ''
+                    }
                 </CardData>
             </Card>
         )

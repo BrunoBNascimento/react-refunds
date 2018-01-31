@@ -5,7 +5,6 @@ import LoginForm from './forms/LoginForm'
 import {isAdmin, isClient} from '../utils/AuthUtils'
 import {BACKOFFICE_PATH, ROOT_PATH} from '../constants/RouterConstants'
 
-
 export default class Login extends Component {
 
     doLogin(values) {

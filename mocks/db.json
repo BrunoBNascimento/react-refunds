@@ -5,7 +5,7 @@
       "value": "19.90",
       "account_id": "1",
       "comment": "Uber do tamboré até alphaville",
-      "status": "ABERTO",
+      "status": "NEGADO",
       "id": 1
     },
     {
@@ -37,7 +37,7 @@
       "value": "19.90",
       "account_id": "1",
       "comment": "Uber do tamboré até alphaville",
-      "status": "ABERTO",
+      "status": "APROVADO",
       "id": 5
     }
   ],

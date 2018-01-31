@@ -9,3 +9,6 @@ export const receiveRefunds = payload => {
 export const storeRefunds = payload =>{
     return {type: 'STORE_REFUNDS', payload}
 }
+export const updatedStatus = payload =>{
+    return {type: 'UPDATED_STATUS', payload}
+}

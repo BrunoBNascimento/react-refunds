@@ -116,14 +116,15 @@ html,body{
     width:100%;
 }
 .form__input, .form__textarea{
-    width:100%;
     border-radius:5px;
     background:white;
     border:1px solid #D0D4D9;
+    box-sizing: border-box;
     min-height:30px;
     min-width: 10%;
     outline: none;
     padding:5px;
+    width:100%;
 }
 .form__textarea{
     min-height:130px;
@@ -226,4 +227,13 @@ html,body{
 }
 .badge__text{
     color:white;
+}
+.admin-options{
+    clear:both;
+    width:100%;
+    padding:5px;
+    box-sizing: border-box;
+}
+.admin-options__select{
+    width:100%;
 }
