@@ -1,3 +1,3 @@
-export const createBearerHeader = (jwtToken) => {
+export const createBearerHeaderObject = jwtToken => {
     return {'Authorization': `Bearer ${jwtToken}`}
 }

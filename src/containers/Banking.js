@@ -1,9 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import Loading from '../components/Loading/index'
-import Card from '../components/Card/index'
-import CardTitle from '../components/Card/CardTitle'
-import CardData from '../components/Card/CardData'
+import BankingCard from '../components/BankingCard'
 import AccountsService from '../services/AccountsService'
 import BankingForm from '../components/forms/BankingForm'
 
@@ -18,26 +16,12 @@ class Banking extends Component {
         return this.props.storeAccounts(values)
     }
 
-    //TODO: Create a high order component or whatever to improve this repeated code
-    renderCards(account) {
-        return (
-            <Card key={`banking_${account.id}`}>
-                <CardTitle>
-                    {account.bank_code}
-                </CardTitle>
-                <CardData>
-                    <ul className="card__unordered-list">
-                        <li className="card__list-item"><b>Agencia:</b> {account.bank_agency}</li>
-                        <li className="card__list-item"><b>Conta:</b> {account.bank_account}</li>
-                        <li className="card__list-item"><b>Comentários:</b> {account.comment}</li>
-                    </ul>
-                </CardData>
-            </Card>
-        )
-    }
-
     banksToSelectData(banks = []) {
         return banks.map((bank) => ({value: bank.code, label: bank.name}))
+    }
+
+    renderBankingCards(accounts){
+        return accounts.map(account => <BankingCard account={account}/>)
     }
 
     render() {
@@ -50,7 +34,10 @@ class Banking extends Component {
                 <BankingForm banks={banks} onSubmit={this.storeAccounts}/>
                 <h1 className='title'>Suas contas</h1>
                 <div className='container banks-container'>
-                    {isLoading ? <Loading/> : data.map(account => this.renderCards(account))}
+                    {isLoading
+                        ? <Loading/>
+                        : this.renderBankingCards(data)
+                    }
                 </div>
             </Fragment>
         );

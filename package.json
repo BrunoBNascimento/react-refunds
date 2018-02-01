@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject",
     "mocks": "node ./node_modules/json-server/bin/index.js --watch ./mocks/db.json --port 3001 --delay 4000 --middlewares ./mocks/middlewares/login-middleware.js",
     "dev": "concurrently \"npm start\" \"npm run mocks\""

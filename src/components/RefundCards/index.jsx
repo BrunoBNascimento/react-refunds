@@ -1,16 +1,6 @@
 import React, {Component} from 'react'
-import Card from '../Card/index'
-import CardTitle from '../Card/CardTitle'
-import CardData from '../Card/CardData'
-import StatusBadge from '../StatusBadge'
+import refundCard from '../RefundCard'
 import AdminOptions from '../AdminOptions'
-import {floatToReal} from '../../utils/FormatterUtils'
-import {
-    ABERTO,
-    APROVADO,
-    REEMBOLSADO,
-    NEGADO
-} from '../../constants/StatusConstants'
 
 export default class RefundCards extends Component{
 
@@ -20,39 +10,13 @@ export default class RefundCards extends Component{
     }
 
     createCards(refund) {
-        const {props} = this;
-        const statusArray = [
-            ABERTO,
-            APROVADO,
-            REEMBOLSADO,
-            NEGADO
-        ]
-        return (
-            <Card key={`card_${refund.id}`}>
-                <CardTitle>
-                    {refund.title}
-                </CardTitle>
-                <CardData>
-                    <ul className="card__unordered-list">
-                        <li className="card__list-item">
-                            <b>Valor:</b> {floatToReal(refund.value)}
-                        </li>
-                        <li className="card__list-item">
-                            <b>Comentário:</b> {refund.comment}
-                        </li>
-                        <li className="card__list-item">
-                            <b>Conta:</b> {refund.account_id}
-                        </li>
-                        <li className="card__list-item">
-                            <StatusBadge status={refund.status} />
-                        </li>
-                    </ul>
-                    {
-                        props.isAdmin === true ? <AdminOptions options={statusArray} updateStatus={props.updateStatus} refundId={refund.id}/> : ''
-                    }
-                </CardData>
-            </Card>
-        )
+        const {isAdmin, updateStatus} = this.props
+        const wrappedProps = {
+            refundId: refund.id,
+            updateStatus
+        }
+        const RefundCard = refundCard({isAdmin, refund, wrappedProps})(AdminOptions)
+        return <RefundCard key={`refundCard_${refund.id}`}/>
     }
 
     renderRefunds(refunds){
