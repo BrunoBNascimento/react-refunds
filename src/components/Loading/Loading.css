@@ -1,0 +1,8 @@
+.loading{
+    text-align: center;
+}
+.loading__image{
+    width:32px;
+    height:32px;
+    margin:auto;
+}

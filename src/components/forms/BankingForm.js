@@ -1,6 +1,7 @@
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
 import {createSelectOptions} from '../../utils/FormUtils'
+import './Forms.css'
 
 const BankingForm = props => {
     const {handleSubmit, banks} = props

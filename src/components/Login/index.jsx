@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {browserHistory} from 'react-router'
 import axios from 'axios'
-import LoginForm from './forms/LoginForm'
-import {isAdmin, isClient} from '../utils/AuthUtils'
-import {BACKOFFICE_PATH, ROOT_PATH} from '../constants/RouterConstants'
+import LoginForm from '../forms/LoginForm'
+import {isAdmin, isClient} from '../../utils/AuthUtils'
+import {BACKOFFICE_PATH, ROOT_PATH} from '../../constants/RouterConstants'
 
 export default class Login extends Component {
 

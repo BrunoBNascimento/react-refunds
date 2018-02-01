@@ -1,5 +1,10 @@
 import React from 'react'
-import {ABERTO, APROVADO, REEMBOLSADO, NEGADO} from '../constants/StatusConstants'
+import {
+    ABERTO,
+    APROVADO,
+    REEMBOLSADO,
+    NEGADO
+} from '../../constants/StatusConstants'
 
 
 const createBadgeClassName = status => {

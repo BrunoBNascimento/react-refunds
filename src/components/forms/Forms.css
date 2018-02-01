@@ -1,0 +1,34 @@
+.form{
+    width:100%;
+}
+.form__group{
+    clear:both;
+    padding:5px 0;
+}
+.form__group label{
+    display:block;
+    width:100%;
+}
+.form__input, .form__textarea{
+    border-radius:5px;
+    background:white;
+    border:1px solid #D0D4D9;
+    box-sizing: border-box;
+    min-height:30px;
+    min-width: 10%;
+    outline: none;
+    padding:5px;
+    width:100%;
+}
+.form__textarea{
+    min-height:130px;
+}
+.form__input:focus{
+
+}
+.form__input--invalid{
+
+}
+.form__label{
+
+}

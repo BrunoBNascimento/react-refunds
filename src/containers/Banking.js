@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
-import Loading from '../components/Loading'
-import Card from '../components/Card/Card'
+import Loading from '../components/Loading/index'
+import Card from '../components/Card/index'
 import CardTitle from '../components/Card/CardTitle'
 import CardData from '../components/Card/CardData'
 import AccountsService from '../services/AccountsService'
@@ -18,7 +18,7 @@ class Banking extends Component {
         return this.props.storeAccounts(values)
     }
 
-    //TODO: Create a high order component to improve this repeated code
+    //TODO: Create a high order component or whatever to improve this repeated code
     renderCards(account) {
         return (
             <Card key={`banking_${account.id}`}>
