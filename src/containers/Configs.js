@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Loading from '../components/Loading'
+import Loading from '../components/Loading/index'
 import ConfigsService from '../services/ConfigsService'
 import ConfigsForm from '../components/forms/ConfigsForm'
 

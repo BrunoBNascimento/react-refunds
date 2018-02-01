@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {fetchRefunds, receiveRefunds, storeRefunds, updatedStatus} from "../actions/refundActions";
+import {fetchRefunds, receiveRefunds, storeRefunds} from "../actions/refundActions";
 import {REFUNDS} from '../constants/APIConstants'
 
 export default class RefundService{

@@ -1,0 +1,24 @@
+.side-menu{
+    border: 1px solid #D0D4D9;
+    border-radius:5px;
+    height:300px;
+    overflow: hidden;
+    width:200px;
+}
+.side-menu__item{
+    border-bottom:1px solid #D0D4D9;
+    list-style: none;
+    padding:10px 0 10px 20px;
+    width:100%;
+}
+.side-menu__item:not(.side-menu__link--active):hover{
+    background: #F3F5F8;
+}
+.side-menu__link{
+    text-decoration:none;
+    color:#1A68D7;
+}
+.side-menu__link--active{
+    color:#292D32;
+    font-weight: 600;
+}

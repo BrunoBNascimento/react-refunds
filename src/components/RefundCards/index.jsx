@@ -1,11 +1,16 @@
 import React, {Component} from 'react'
-import Card from '../components/Card/Card'
-import CardTitle from '../components/Card/CardTitle'
-import CardData from '../components/Card/CardData'
-import StatusBadge from '../components/StatusBadge'
-import {floatToReal} from '../utils/FormatterUtils'
-import {ABERTO, APROVADO, REEMBOLSADO, NEGADO} from '../constants/StatusConstants'
-import AdminOptions from "./AdminOptions"
+import Card from '../Card/index'
+import CardTitle from '../Card/CardTitle'
+import CardData from '../Card/CardData'
+import StatusBadge from '../StatusBadge'
+import AdminOptions from '../AdminOptions'
+import {floatToReal} from '../../utils/FormatterUtils'
+import {
+    ABERTO,
+    APROVADO,
+    REEMBOLSADO,
+    NEGADO
+} from '../../constants/StatusConstants'
 
 export default class RefundCards extends Component{
 

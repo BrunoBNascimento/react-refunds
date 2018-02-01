@@ -1,5 +1,6 @@
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
+import './Forms.css'
 
 const LoginForm = props => {
     const {handleSubmit} = props

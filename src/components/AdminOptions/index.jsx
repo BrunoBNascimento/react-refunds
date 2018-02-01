@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {ABERTO, APROVADO, NEGADO, REEMBOLSADO} from "../constants/StatusConstants"
+import {ABERTO, APROVADO, NEGADO, REEMBOLSADO} from "../../constants/StatusConstants"
 
 class AdminOptions extends Component{
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {List} from 'react-content-loader'
-import Card from '../components/Card/Card'
+import Card from '../Card'
+import './Loading.css'
 
 //TODO: DONT REPEAT SO MUCH CODE
 const Loading = () => {
