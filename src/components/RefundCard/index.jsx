@@ -5,7 +5,6 @@ import CardTitle from '../Card/CardTitle'
 import CardData from '../Card/CardData'
 import StatusBadge from '../StatusBadge'
 
-
 const refundCard = ({isAdmin, refund, wrappedProps}) => (WrappedComponent) => {
     return class RefundCard extends Component{
         render(){

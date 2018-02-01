@@ -4,7 +4,22 @@ import {createSelectOptions} from '../../utils/FormUtils'
 import {floatToRealTwo} from '../../utils/FormatterUtils'
 import './Forms.css'
 
-
+const FileInput = () => {
+    return(
+        <input
+            type="file"
+            onChange={
+                ( e ) => {
+                    e.preventDefault();
+                    const { fields } = this.props;
+                    const files = [ ...e.target.files ];
+                    fields.yourField.handleChange(files);
+                }
+            }
+            className='form__input'
+        />
+    )
+}
 const RefundsForm = props => {
     const {handleSubmit, accounts} = props
     return (
@@ -34,7 +49,7 @@ const RefundsForm = props => {
                 <label htmlFor='fiscal_note' className='form__label'>
                     Nota Fiscal
                 </label>
-                <Field component='input' name='fiscal_note' id='fiscal_note' type='file' className='form__input'/>
+                <Field component={FileInput} name='fiscal_note' id='fiscal_note'/>
             </div>
             <div className="form__group">
                 <label htmlFor='comment' className='form__label'>

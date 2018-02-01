@@ -5,9 +5,6 @@ export const floatToReal = floatNumber => {
         minimumFractionDigits: 2
     }).format(floatNumber)
 }
-export const floatToRealTwo = float => {
-    return float
-}
 
 export const realToFloat = stringReal => {
     const float = parseFloat(
