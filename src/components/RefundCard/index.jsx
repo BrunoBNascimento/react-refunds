@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {floatToReal} from '../../utils/FormatterUtils'
-import Card from '../Card/index'
+import Card from '../Card'
 import CardTitle from '../Card/CardTitle'
 import CardData from '../Card/CardData'
 import StatusBadge from '../StatusBadge'

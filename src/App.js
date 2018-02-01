@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
-import Header from './components/Header/index'
-import SideMenu from './components/SideMenu/index'
+import Header from './components/Header'
+import SideMenu from './components/SideMenu'
 import './css/App.css'
 
 class App extends Component {

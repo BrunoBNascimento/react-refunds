@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Loading from '../components/Loading/index'
-import ConfigsService from '../services/ConfigsService'
-import ConfigsForm from '../components/forms/ConfigsForm'
+import Loading from '../../components/Loading'
+import ConfigsService from '../../services/ConfigsService'
+import ConfigsForm from '../../components/forms/ConfigsForm'
 
 class Configs extends Component {
 

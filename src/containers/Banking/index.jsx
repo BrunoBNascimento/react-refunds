@@ -1,9 +1,9 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
-import Loading from '../components/Loading/index'
-import BankingCard from '../components/BankingCard'
-import AccountsService from '../services/AccountsService'
-import BankingForm from '../components/forms/BankingForm'
+import Loading from '../../components/Loading'
+import BankingCard from '../../components/BankingCard'
+import AccountsService from '../../services/AccountsService'
+import BankingForm from '../../components/forms/BankingForm'
 
 class Banking extends Component {
 

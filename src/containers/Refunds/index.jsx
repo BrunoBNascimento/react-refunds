@@ -1,11 +1,11 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
-import Loading from '../components/Loading/index'
-import RefundsForm from '../components/forms/RefundsForm'
-import RefundService from '../services/RefundService'
-import AccountsService from '../services/AccountsService'
-import {ABERTO} from '../constants/StatusConstants'
-import RefundCards from '../components/RefundCards/index'
+import Loading from '../../components/Loading'
+import RefundsForm from '../../components/forms/RefundsForm'
+import RefundService from '../../services/RefundService'
+import AccountsService from '../../services/AccountsService'
+import {ABERTO} from '../../constants/StatusConstants'
+import RefundCards from '../../components/RefundCards'
 
 class Refunds extends Component {
 
