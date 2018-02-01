@@ -1,7 +1,6 @@
 import React from 'react'
 import {reduxForm, Field} from 'redux-form'
 import {createSelectOptions} from '../../utils/FormUtils'
-import {floatToRealTwo} from '../../utils/FormatterUtils'
 import './Forms.css'
 
 const FileInput = () => {
@@ -34,7 +33,7 @@ const RefundsForm = props => {
                 <label htmlFor='value' className='form__label'>
                     Valor
                 </label>
-                <Field component='input' name='value' id='value' type='text' className='form__input' required normalize={floatToRealTwo}/>
+                <Field component='input' name='value' id='value' type='text' className='form__input' required/>
             </div>
             <div className="form__group">
                 <label htmlFor='account_id' className='form__label'>

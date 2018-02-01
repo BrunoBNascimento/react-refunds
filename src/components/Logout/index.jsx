@@ -4,6 +4,10 @@ import {LOGIN_PATH} from '../../constants/RouterConstants'
 
 export default class Logout extends Component {
 
+    constructor(){
+        super()
+    }
+
     componentWillMount(){
         localStorage.removeItem('auth-token')
         localStorage.removeItem('role')

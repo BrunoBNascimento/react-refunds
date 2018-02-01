@@ -5,8 +5,6 @@ const Authorization = allowedRoles => WrappedComponent => {
     return class WithAuthorization extends Component {
         constructor(props) {
             super(props)
-
-            // TODO: use a redux way
             this.role = localStorage.getItem('role');
         }
 
