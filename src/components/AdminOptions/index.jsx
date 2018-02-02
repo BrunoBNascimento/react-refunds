@@ -11,19 +11,17 @@ class AdminOptions extends Component{
     constructor(){
         super();
         this.state = {
-            status: '',
-            id: ''
+            status: ''
         }
     }
 
     sendStatus = () => {
         const {props, state} = this
-        props.updateStatus(state);
+        props.updateStatus(state.status)
     }
 
     handleChange = event => {
-        const {refundId} = this.props
-        this.setState({status: event.target.value, id: refundId})
+        this.setState({status: event.target.value})
     }
 
 

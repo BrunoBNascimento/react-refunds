@@ -75,38 +75,6 @@ html,body{
     padding:15px;
     width:300px;
 }
-
-.card{
-    background: #fbfbfb;
-    border-radius:5px;
-    border:1px solid #e3e8ed;
-    box-sizing: border-box;
-    box-shadow:2px 2px 2px #c9c9c9;
-    margin:5px 5px 5px 5px;
-    padding:10px;
-    min-height:170px;
-    max-width:calc(20% - 10px);
-}
-.card:first-child{
-    margin:5px 5px 5px 0;
-}
-.card:last-child{
-    margin:5px 0 5px 5px;
-}
-.card__title{
-    font-size:20px;
-    text-align: center;
-}
-.card__unordered-list{
-    margin:10px 0;
-}
-.card__list-item{
-    list-style: none;
-    line-height: 20px;
-}
-.card__data{
-
-}
 .card__svg{
     width:150%; /* WHY ? */
     margin:auto;

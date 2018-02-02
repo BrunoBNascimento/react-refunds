@@ -13,9 +13,9 @@ class AdminApp extends Component {
         this.props.fetch()
     }
 
-    updateStatus = ({status, id}) => {
-        const {props} = this
-        props.update_status(status, id)
+    updateStatus = (status, id) => {
+        const {update_status} = this.props
+        update_status(status, id)
     }
 
     render() {
@@ -28,12 +28,15 @@ class AdminApp extends Component {
                     <div className="content">
                         <h1 className='title'>Reembolsos</h1>
                         <div className='container refunds-container'>
-                            {isLoading ? <Loading/> : <RefundCards refunds={data} isAdmin={true} updateStatus={updateStatus}/>}
+                            {isLoading
+                                ? <Loading/>
+                                : <RefundCards refunds={data} isAdmin={true} updateStatus={updateStatus}/>
+                            }
                         </div>
                     </div>
                 </div>
             </Fragment>
-        );
+        )
     }
 }
 

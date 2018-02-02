@@ -4,15 +4,18 @@ import AdminOptions from '../AdminOptions'
 
 export default class RefundCards extends Component{
 
-    updateStatus = (status, id) => {
-        const {props} = this
-        props.updateStatus(status, id);
+    updateStatus = id => {
+        return status => {
+            const {props} = this
+            props.updateStatus(status, id)
+        }
     }
 
     createCards(refund) {
-        const {isAdmin, updateStatus} = this.props
+        const updateStatus = this.updateStatus(refund.id)
+
+        const {isAdmin} = this.props
         const wrappedProps = {
-            refundId: refund.id,
             updateStatus
         }
         const RefundCard = refundCard({isAdmin, refund, wrappedProps})(AdminOptions)
